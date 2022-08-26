@@ -1,0 +1,27 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: bigbang
+  namespace: bigbang
+spec:
+  interval: 1m0s
+  ref:
+    branch: template-demo
+  url: https://github.com/jjharwi/template
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: bigbang
+  namespace: bigbang
+spec:
+  interval: 1m0s
+  path: ./
+  prune: false
+  serviceAccountName: bigbang
+  sourceRef:
+    kind: GitRepository
+    name: bigbang
+
