@@ -8,7 +8,7 @@ spec:
   interval: 1m0s
   ref:
     branch: template-demo
-  url: https://github.com/jjharwi/template
+  url: https://github.com/jjharwi/template.git
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
